@@ -1,0 +1,88 @@
+---
+title: "bcb bootcamp"
+author: '@laneharrison'
+date: "2/11/2017"
+output: html_document
+---
+
+Welcome to the R section of your "bootcamp"!
+
+R is a programming language geared towards statistical computing.
+
+What makes R exciting is its community.
+Research groups and statisticians are regularly publishing R packages that allow you to reproduce and extend their analyses.
+You'll find that R is an excellent choice for exploratory *and* confirmatory data analysis.
+
+In this class we have three weeks together.
+And while there is certainly some flexibility in what we cover, most of our exercises will focus on a small set of learning goals.
+Specifically, upon successful completion of this module, you should be able to:
+
+1. Use R for routine analytical tasks: invoking stastical functions, loading data, producing documents / figures, installing packages, etc.
+2. Visualize any given dataset in multiple ways, through a rudimentary understanding of the "Grammar of Graphics", and `ggplot2`.
+3. Manipulate, arrange, and mutat datasets you encounter using `dplyr`.
+
+This should provide you with a foundation for using R in your analysis workflow.
+
+(You'll also learn Python in this course. What you need to know is that python overlaps with some of the things you do in R. 
+When to use one or the other depends on the goals of your project.)
+
+# Book
+
+The foundation of this module is [R for Data Science](http://r4ds.had.co.nz/) by [Hadley Wickham](http://twitter.com/hadleywickham).
+
+This is an excellent book. It's also brand new as of 2017.
+I recommend going well beyond the exercises in this module.
+
+# Assignment
+
+To assess your progress, each week we'll assign a set of exercises from the R for Data Science book.
+
+To turn these in, simply output an R Markdown document to PDF and upload to Canvas.
+
+# Week 1 - Getting Started & Data Visualization
+
+In our first week, we'll become acquainted with R, R Studio, and learn to plot data we encounter with `ggplot2`.
+
+## Discussion
+
+- How WPI VIEW uses R + R Markdown for data visualization research.
+- How your tools shape to you.
+- Deliberate Practice (vs. Learning in The Trenches (vs. Shortcuts in the Trenches))
+- Open Science: Challenges and Benefits
+
+## Reading
+
+R for Data Science, Chapters 1-3
+
+## Exercises
+
+- Chapter 3:
+    - 3.2.4
+    - 3.3.1
+    - 3.5.1
+    - 3.6.1
+    - 3.7.1
+    - 3.8.1
+    - 3.9.1
+
+# Week 2 - Data Manipulation
+
+# Week 3 - Putting it Together
+
+## The Final Project
+
+- your own DATA
+- a dataset of your choice
+
+- produce an RMD
+- describe the data in its original form
+- a section on EDA
+- a section on your "hypothesis" or where you want to go with the data
+- a section on the transformations you're making
+- a section on the final result
+
+
+# Links
+
+- Experiment statistics: yatani.jp
+- [@hrbrmstr's R Workshop @WPI 2016](https://hrbrmstr.github.io/WPIRWorkshop/)
