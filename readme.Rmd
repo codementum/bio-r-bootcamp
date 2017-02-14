@@ -5,6 +5,8 @@ date: "2/11/2017"
 output: html_document
 ---
 
+### 2/13/2017: Note- I have changed the exercises for the first week.
+
 Welcome to the R section of your "bootcamp"!
 
 R is a programming language geared towards statistical computing.
@@ -68,10 +70,6 @@ R for Data Science, Chapters 26-27.3, 1-3
 - 3.2.4 (10m)
 - 3.3.1 (15m)
 - 3.5.1 (25m)
-- 3.6.1 (25m)
-- 3.7.1 (30m) (Note: on q1, refer to the example that starts with `demo <- tribble`)
-- 3.8.1 (20m)
-- 3.9.1 (20m)
 
 # Week 2 - Data Manipulation
 
@@ -95,5 +93,6 @@ Produce an original document with the following features:
 
 # Links
 
+- [CRAN])(http://cran.r-project.org/)
 - [yatani.jp: HCI experiment statistics w/ R examples](http://yatani.jp/teaching/doku.php?id=hcistats:start)
 - [\@hrbrmstr's R Workshop WPI 2016](https://hrbrmstr.github.io/WPIRWorkshop/)
