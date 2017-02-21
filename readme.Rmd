@@ -6,6 +6,7 @@ output: html_document
 ---
 
 ### 2/13/2017: Note- I have changed the exercises for the first week.
+### 2/20/2017: Note- I have added exercises for the second week.
 
 Welcome to the R section of your "bootcamp"!
 
@@ -71,9 +72,28 @@ R for Data Science, Chapters 26-27.3, 1-3
 - 3.3.1 (15m)
 - 3.5.1 (25m)
 
-# Week 2 - Data Manipulation
+# Week 2 - Data Wrangling
 
-*TBA*
+[slides](week2-inclass.html)
+
+This week we'll tackle data wrangling with `dplyr`, which will probably take up more of your time than actual statistics, modeling, and visualization!.
+
+## in-class discussion
+
+- Why data wrangling is so pervasive.
+- Tidy data concepts
+- `dplyr`, the tidy data tool
+
+## reading
+
+R for Data Science, Chapters 5. 
+(If you want to really dive in, do 9-12, too.)
+
+## exercises
+
+- 5.5.2 question 1 (10m)
+- 5.6.7 (30m)
+- 5.7.1 (30m)
 
 # Week 3 - Putting it Together
 
@@ -96,3 +116,5 @@ Produce an original document with the following features:
 - [CRAN])(http://cran.r-project.org/)
 - [yatani.jp: HCI experiment statistics w/ R examples](http://yatani.jp/teaching/doku.php?id=hcistats:start)
 - [\@hrbrmstr's R Workshop WPI 2016](https://hrbrmstr.github.io/WPIRWorkshop/)
+
+- [propr: An R-package for Identifying Proportionally Abundant Features Using Compositional Data Analysis](http://biorxiv.org/content/early/2017/02/01/104935)
