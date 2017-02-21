@@ -6,6 +6,7 @@ output: html_document
 ---
 
 ### 2/13/2017: Note- I have changed the exercises for the first week.
+### 2/20/2017: Note- I have added exercises for the second week.
 
 Welcome to the R section of your "bootcamp"!
 
