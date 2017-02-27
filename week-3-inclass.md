@@ -1,16 +1,6 @@
----
-title: "Data Modeling & R"
-author: '@laneharrison'
-date: "2/26/2017"
-output:
-  html_document:
-    keep_md: yes
-  beamer_presentation: default
-  ioslides_presentation: default
-  slidy_presentation: default
-editor_options:
-  chunk_output_type: console
----
+# Data Modeling & R
+@laneharrison  
+2/26/2017  
 
 # Data Modeling
 
@@ -29,23 +19,48 @@ Where does this fit into your process?
 
 ## The approach
 
-```{r}
-library(tidyverse) # set of libraries
 
+```r
+library(tidyverse) # set of libraries
+```
+
+```
+## Loading tidyverse: ggplot2
+## Loading tidyverse: tibble
+## Loading tidyverse: tidyr
+## Loading tidyverse: readr
+## Loading tidyverse: purrr
+## Loading tidyverse: dplyr
+```
+
+```
+## Conflicts with tidy packages ----------------------------------------------
+```
+
+```
+## filter(): dplyr, stats
+## lag():    dplyr, stats
+```
+
+```r
 library(modelr)
 options(na.action = na.warn)
 ```
 
 ## Let's model some data
 
-```{r}
+
+```r
 ggplot(sim1, aes(x, y)) + 
   geom_point()
 ```
 
+![](week-3-inclass_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+
 
 ## Randomly generating models
-```{r}
+
+```r
 models <- tibble(
   a1 = runif(250, -20, 40),
   a2 = runif(250, -5, 5)
@@ -56,15 +71,24 @@ ggplot(sim1, aes(x, y)) +
   geom_point() 
 ```
 
+![](week-3-inclass_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+
 
 ## Applying a model
 
 
-```{r}
+
+```r
 model1 <- function(a, data) {
   a[1] + data$x * a[2]
 }
 model1(c(7, 1.5), sim1) # an example model's predictions
+```
+
+```
+##  [1]  8.5  8.5  8.5 10.0 10.0 10.0 11.5 11.5 11.5 13.0 13.0 13.0 14.5 14.5
+## [15] 14.5 16.0 16.0 16.0 17.5 17.5 17.5 19.0 19.0 19.0 20.5 20.5 20.5 22.0
+## [29] 22.0 22.0
 ```
 
 ## Your turn
@@ -73,7 +97,8 @@ Produce a plot of the model c(7, 1.5) (intercept, slope)
 
 Hint: start by plotting sim1 with points (as above)
 
-```{r}
+
+```r
 df <- tibble(
   b = 7,
   y = 1.5
@@ -84,11 +109,14 @@ df <- tibble(
 
 ## One solution
 
-```{r}
+
+```r
 ggplot(sim1) + 
   geom_abline(aes(intercept = b, slope = y), data = df) +
   geom_point(aes(x, y))
 ```
+
+![](week-3-inclass_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
 
 
 
@@ -96,7 +124,8 @@ ggplot(sim1) +
 
 - "root mean square deviation"
 
-```{r}
+
+```r
 measure_distance <- function(mod, data) {
   diff <- data$y - model1(mod, data)
   sqrt(mean(diff ^ 2))
@@ -104,9 +133,14 @@ measure_distance <- function(mod, data) {
 measure_distance(c(7, 1.5), sim1) # example model distance (average)
 ```
 
+```
+## [1] 2.665212
+```
+
 ## Distance of Multiple Models
 
-```{r}
+
+```r
 sim1_dist <- function(a1, a2) {
   measure_distance(c(a1, a2), sim1)
 } # using fucntion from before... 
@@ -117,9 +151,27 @@ models <- models %>%
 models # print results
 ```
 
+```
+## # A tibble: 250 × 3
+##            a1         a2      dist
+##         <dbl>      <dbl>     <dbl>
+## 1    7.364441 -1.9641340 22.279709
+## 2   38.108140  2.9489961 38.967008
+## 3  -13.022919 -0.2096070 30.456731
+## 4   30.842799  4.3231480 39.713367
+## 5    2.880468  0.8032403  9.204479
+## 6   39.447027 -2.6958529 16.539613
+## 7   34.688862 -4.3079726 18.934617
+## 8   17.163347 -3.9085066 26.289167
+## 9   -4.033355  2.7792197  5.193883
+## 10  -3.259537 -3.2809624 39.925315
+## # ... with 240 more rows
+```
+
 ## 10 best models
 
-```{r}
+
+```r
 ggplot(sim1, aes(x, y)) + 
   geom_point(size = 2, colour = "grey30") + 
   geom_abline(
@@ -128,16 +180,22 @@ ggplot(sim1, aes(x, y)) +
   )
 ```
 
+![](week-3-inclass_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+
 ## Visualizing the model space!
 
-```{r}
+
+```r
 ggplot(models, aes(a1, a2)) +
   geom_point(data = filter(models, rank(dist) <= 10), size = 4, colour = "red") +
   geom_point(aes(colour = -dist))
 ```
 
+![](week-3-inclass_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+
 ## Make a grid of models
-```{r}
+
+```r
 grid <- expand.grid(
   a1 = seq(-5, 20, length = 25),
   a2 = seq(1, 3, length = 25)
@@ -146,12 +204,15 @@ grid <- expand.grid(
 ```
 
 ## Plot our grid 
-```{r}
+
+```r
 grid %>% 
   ggplot(aes(a1, a2)) +
   geom_point(data = filter(grid, rank(dist) <= 10), size = 4, colour = "red") +
   geom_point(aes(colour = -dist)) 
 ```
+
+![](week-3-inclass_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
 
 ## Moving forward
@@ -163,17 +224,35 @@ grid %>%
 
 ## Iris Sepal Lengths: Are these significantly different?
 
-```{r}
+
+```r
 iris %>% 
   ggplot(aes(Sepal.Length)) +
   geom_density(aes(fill = Species, colour = Species), alpha=0.1) 
 ```
 
+![](week-3-inclass_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+
 ## Running a t.test
 
-```{r}
+
+```r
 t.test( filter(iris, Species == "setosa")$Sepal.Length,
         filter(iris, Species == "virginica")$Sepal.Length) 
+```
+
+```
+## 
+## 	Welch Two Sample t-test
+## 
+## data:  filter(iris, Species == "setosa")$Sepal.Length and filter(iris, Species == "virginica")$Sepal.Length
+## t = -15.386, df = 76.516, p-value < 2.2e-16
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -1.78676 -1.37724
+## sample estimates:
+## mean of x mean of y 
+##     5.006     6.588
 ```
 
 ## Your turn: Running a ???
