@@ -1,13 +1,6 @@
----
-title: "bcb bootcamp - R section"
-author: '@laneharrison'
-date: "2/11/2017"
-output: 
-  html_document:
-    keep_md: true
-editor_options:
-  chunk_output_type: console
----
+# bcb bootcamp - R section
+@laneharrison  
+2/11/2017  
 
 ### 2/13/2017: Note- I have changed the exercises for the first week.
 ### 2/20/2017: Note- I have added exercises for the second week.
