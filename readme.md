@@ -94,7 +94,14 @@ R for Data Science, Chapters 5.
 
 # Week 3 - Putting it Together
 
-*TBA*
+This week we're covering the last loop: modeling.
+You now know a bit about visualization, and a bit about transformation and wrangling.
+
+Modeling is about capturing the essence of your data through tiny bits of math.
+Expect your modeling life to be iterative, with transformation and modeling definitely in the loop.
+
+
+[slides](week3-inclass.html)
 
 ## The "Final" Project
 
